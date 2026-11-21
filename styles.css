@@ -1,0 +1,1024 @@
+:root {
+  --paper: #f8f0e6;
+  --olive: #4f5808;
+  --orange: #ff6d00;
+  --ink: #17120f;
+  --thin-border: #ddd3c5;
+  --font: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  font-family: var(--font);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+button {
+  font: inherit;
+}
+img {
+  max-width: 100%;
+}
+.page-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.page {
+  width: 1470px;
+  height: 8152px;
+  position: relative;
+  margin: 0 auto;
+  background: var(--paper);
+  transform-origin: left top;
+  overflow: hidden;
+}
+section,
+header,
+footer {
+  position: absolute;
+  width: 1470px;
+  left: 0;
+}
+.section-heading {
+  font-family: var(--font);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--olive);
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+.section-heading:after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: var(--orange);
+  position: absolute;
+  left: 0;
+  bottom: -24px;
+}
+p,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+p {
+  font-size: 24px;
+  line-height: 1.32;
+  margin-bottom: 0;
+}
+strong {
+  font-weight: 700;
+}
+
+/* Fotografia original e curvas do cabeçalho do PDF */
+.hero {
+  height: 940px;
+  top: 0;
+  overflow: hidden;
+  background: #a3d6e6;
+}
+.hero-beach {
+  position: absolute;
+  width: 1470px;
+  max-width: none;
+  height: 1836.85px;
+  left: 0;
+  top: -941.57px;
+}
+.hero-curve {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 940px;
+}
+.monogram {
+  background: var(--paper);
+  border: 4px solid var(--olive);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  z-index: 2;
+}
+.monogram img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+}
+.monogram-header {
+  position: absolute;
+  left: 872px;
+  top: 553px;
+  width: 219px;
+  height: 219px;
+}
+.hero h1 {
+  position: absolute;
+  left: 588px;
+  top: 795px;
+  color: var(--paper);
+  font-size: 85px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+/* Carta de boas-vindas, texto HTML e flores extraídas */
+.welcome {
+  top: 930px;
+  height: 810px;
+}
+.flowers {
+  position: absolute;
+  pointer-events: none;
+  width: 500px;
+  height: 888.9px;
+  max-width: none;
+  object-fit: contain;
+}
+.flowers-left {
+  top: -16.45px;
+  left: -4px;
+}
+.flowers-right {
+  top: -98.45px;
+  left: 971px;
+  transform: scaleX(-1);
+}
+.welcome-content {
+  position: absolute;
+  left: 280px;
+  top: 102px;
+  width: 1090px;
+}
+.welcome-copy {
+  margin-top: 63px;
+}
+.welcome-copy p {
+  font-size: 24px;
+  line-height: 1.32;
+  margin-bottom: 19px;
+}
+.welcome-copy .intro-lead {
+  margin-bottom: 42px;
+}
+.signature {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.signature strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+.signature span {
+  font-size: 48px;
+  line-height: 1.05;
+}
+
+/* Calendário: não é uma imagem, os dias são células HTML reais */
+.event-date {
+  top: 1757px;
+  height: 570px;
+}
+.event-date > .section-heading {
+  margin-left: 145px;
+}
+.date-content {
+  position: relative;
+}
+.calendar-card {
+  position: absolute;
+  left: 165px;
+  top: 117px;
+  width: 460px;
+  height: 352px;
+  border: 1px solid var(--thin-border);
+  border-radius: 20px;
+  padding: 34px 48px 24px;
+}
+.calendar-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.08;
+  font-size: 32px;
+}
+.calendar-heading span {
+  font-size: 21px;
+  font-weight: 700;
+}
+.calendar-heading strong {
+  font-weight: 500;
+  font-size: 32px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: repeat(6, 34px);
+  margin-top: 58px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.calendar-grid span {
+  font-size: 13px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 27px;
+}
+.calendar-grid .dow {
+  color: #b65e1a;
+  font-size: 13px;
+}
+.calendar-grid .wedding-day {
+  border-radius: 50%;
+  background: var(--olive);
+  color: white;
+  width: 34px;
+  height: 34px;
+}
+.information h3 {
+  font-size: 28px;
+  line-height: 1;
+  margin: 0 0 11px;
+  font-weight: 700;
+}
+.information h4 {
+  font-size: 24px;
+  line-height: 1.05;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.information p {
+  font-size: 20px;
+  line-height: 1.45;
+}
+.info-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 7px;
+  padding: 10px 0 15px;
+  border-bottom: 1px solid #ded4c7;
+}
+.info-item:last-child {
+  border-bottom: 0;
+}
+.info-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-top: 6px;
+}
+.date-information {
+  position: absolute;
+  left: 715px;
+  top: 157px;
+  width: 590px;
+}
+.date-information .info-item:nth-child(2) img,
+.date-information .info-item:nth-child(3) img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Galeria realmente interativa, substituindo a simulação visual no PDF */
+.location {
+  top: 2423px;
+  height: 680px;
+}
+.location > .section-heading {
+  margin-left: 145px;
+}
+.location-gallery {
+  position: absolute;
+  left: 183px;
+  top: 135px;
+  width: 485px;
+  height: 475px;
+}
+.location-gallery::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: -16px;
+  width: calc(100% - 15px);
+  height: 365px;
+  background: url("assets/local-vista-aerea.webp") center/cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 13px rgba(40, 35, 24, 0.12);
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+.gallery-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 352px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(47, 31, 15, 0.15);
+  outline: 0;
+  touch-action: pan-y;
+}
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 14px;
+  background: #d5c3ae;
+}
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #e3d8c9;
+  box-shadow: 0 4px 16px rgba(41, 27, 19, 0.14);
+  background: rgba(255, 251, 244, 0.96);
+  color: var(--olive);
+  width: 49px;
+  height: 49px;
+  line-height: 1;
+  border-radius: 50%;
+  font-size: 38px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0 0 5px;
+  transition: background 0.2s;
+}
+.gallery-arrow:hover,
+.gallery-arrow:focus-visible {
+  background: #ffe8cb;
+}
+.gallery-arrow.prev {
+  left: -24px;
+}
+.gallery-arrow.next {
+  right: -24px;
+}
+.gallery-expand {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  font-size: 21px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.gallery-stage:hover .gallery-expand,
+.gallery-expand:focus-visible {
+  opacity: 1;
+}
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 24px;
+  margin-top: 23px;
+}
+.gallery-dot {
+  width: 11px;
+  height: 11px;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  cursor: pointer;
+  background: #ffd1a9;
+  transition: background 0.2s, transform 0.2s;
+}
+.gallery-dot.active {
+  background: #ff760c;
+  transform: scale(1.15);
+}
+.location-information {
+  position: absolute;
+  left: 774px;
+  top: 220px;
+  width: 555px;
+}
+.location-information .info-item {
+  grid-template-columns: 28px 1fr;
+}
+.location-information a {
+  color: inherit;
+  text-decoration: none;
+}
+.location-information a:hover {
+  text-decoration: underline;
+}
+
+/* Imagem artística original + fotografias independentes */
+.composition {
+  top: 3155px;
+  height: 2240px;
+}
+.composition > .section-heading {
+  margin-left: 145px;
+}
+.composition-copy {
+  position: absolute;
+  left: 145px;
+  top: 130px;
+  width: 1155px;
+  z-index: 1;
+}
+.composition-copy p {
+  margin: 0 0 36px;
+  line-height: 1.35;
+}
+.composition-art {
+  position: absolute;
+  top: 387px;
+  left: 145px;
+  width: 1180px;
+  height: 1636px;
+  display: block;
+  pointer-events: none;
+}
+.composition-art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.inspiration-gallery {
+  position: absolute;
+  left: 145px;
+  top: 1988.64px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.inspiration-item {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 262px;
+  height: 262px;
+  border-radius: 50%;
+  background: transparent;
+  cursor: zoom-in;
+  transition: transform 0.15s;
+  overflow: hidden;
+}
+.inspiration-item:hover {
+  transform: scale(1.045);
+}
+.inspiration-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Dress code: arte original do PDF como um recurso independente */
+.dress-code {
+  top: 5504px;
+  height: 1788px;
+}
+.dress-code > .section-heading {
+  margin-left: 145px;
+}
+.dress-copy {
+  position: absolute;
+  left: 145px;
+  top: 125px;
+  width: 1100px;
+}
+.dress-copy p {
+  margin-bottom: 30px;
+  line-height: 1.32;
+}
+.dress-art {
+  position: absolute;
+  left: 145px;
+  top: 409.5px;
+  width: 1181px;
+  max-width: none;
+  height: 1292.3px;
+  object-fit: contain;
+}
+
+.ending {
+  top: 7342px;
+  height: 810px;
+}
+.ending > .section-heading {
+  margin-left: 145px;
+}
+.ending > p {
+  position: absolute;
+  left: 145px;
+  top: 121px;
+  width: 1140px;
+}
+.ending > p + p {
+  top: 173px;
+}
+.monogram-footer {
+  position: absolute;
+  left: 630px;
+  top: 303px;
+  width: 219px;
+  height: 219px;
+}
+.footer-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1470px;
+  height: 400px;
+  z-index: 0;
+}
+.ending > *:not(.footer-wave) {
+  z-index: 1;
+}
+
+/* Galeria ampliada, acessível no mobile e desktop */
+.lightbox[hidden] {
+  display: none !important;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 14, 8, 0.94);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 65px 16px 35px;
+}
+.lightbox img {
+  width: auto;
+  height: auto;
+  max-width: min(95vw, 1200px);
+  max-height: 85vh;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: absolute;
+  top: 11px;
+  right: 22px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 44px;
+  cursor: pointer;
+}
+.lightbox-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  border-radius: 50%;
+  font-size: 48px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.lightbox-control[hidden] {
+  display: none;
+}
+.has-lightbox {
+  overflow: hidden;
+}
+
+/* Reestruturação mobile (não é um PDF reduzido, o HTML passa a fluir) */
+@media (max-width: 780px) {
+  .page-wrapper {
+    height: auto !important;
+    overflow: visible;
+  }
+  .page {
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  header,
+  section,
+  footer {
+    position: relative;
+    top: auto !important;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+  .section-heading {
+    font-size: clamp(35px, 9vw, 48px);
+    letter-spacing: -0.5px;
+  }
+  .section-heading:after {
+    width: 76px;
+    height: 3px;
+    bottom: -13px;
+  }
+  .hero {
+    height: 385px;
+    flex-shrink: 0;
+  }
+  .hero-beach {
+    height: 650px;
+    width: 521px;
+    max-width: none;
+    left: 50%;
+    top: -258px;
+    transform: translateX(-50%);
+  }
+  .hero-curve {
+    width: 100%;
+    height: 385px;
+    inset: 0;
+  }
+  .monogram-header {
+    left: 50%;
+    top: 196px;
+    width: 96px;
+    height: 96px;
+    transform: translateX(-50%);
+    border-width: 2px;
+  }
+  .hero h1 {
+    font-size: clamp(35px, 9vw, 53px);
+    top: 311px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    line-height: 0.95;
+    letter-spacing: -0.5px;
+  }
+  /* O SVG original é adaptado ao espaço menor */
+  .welcome {
+    padding: 54px 24px 47px;
+    min-height: 0;
+  }
+  .flowers {
+    width: 135px;
+    height: 240px;
+    opacity: 0.88;
+  }
+  .flowers-left {
+    top: 0;
+    left: -63px;
+  }
+  .flowers-right {
+    top: -12px;
+    left: auto;
+    right: -65px;
+    transform: scaleX(-1);
+  }
+  .welcome-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    z-index: 1;
+  }
+  .welcome .section-heading {
+    margin-left: 9px;
+  }
+  .welcome-copy {
+    margin-top: 45px;
+  }
+  .welcome-copy p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .welcome-copy .intro-lead {
+    margin-bottom: 25px;
+  }
+  .desktop-break {
+    display: none;
+  }
+  .signature {
+    margin-top: 30px;
+  }
+  .signature strong {
+    font-size: 18px;
+  }
+  .signature span {
+    font-size: 34px;
+  }
+  .event-date,
+  .location,
+  .composition,
+  .dress-code,
+  .ending {
+    padding: 35px 24px 46px;
+  }
+  .event-date > .section-heading,
+  .location > .section-heading,
+  .composition > .section-heading,
+  .dress-code > .section-heading,
+  .ending > .section-heading {
+    margin-left: 0;
+  }
+  .date-content,
+  .location-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+    margin-top: 49px;
+  }
+  .calendar-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    min-height: 340px;
+    padding: 30px 22px 19px;
+    border-radius: 13px;
+  }
+  .calendar-heading span {
+    font-size: 19px;
+  }
+  .calendar-heading strong {
+    font-size: 28px;
+  }
+  .calendar-grid {
+    margin-top: 40px;
+    grid-template-rows: repeat(6, 35px);
+  }
+  .calendar-grid span {
+    font-size: 14px;
+    width: 29px;
+    height: 29px;
+  }
+  .calendar-grid .dow {
+    font-size: 13px;
+  }
+  .calendar-grid .wedding-day {
+    width: 32px;
+    height: 32px;
+  }
+  .date-information,
+  .location-information {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 560px;
+  }
+  .information h3 {
+    font-size: 28px;
+  }
+  .information h4 {
+    font-size: 22px;
+  }
+  .information p {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .info-item {
+    padding: 13px 0 17px;
+    grid-template-columns: 23px 1fr;
+    gap: 9px;
+  }
+  .info-item img {
+    width: 21px;
+    height: 21px;
+    margin-top: 6px;
+  }
+  .location-gallery {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 24px);
+    max-width: 490px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .gallery-stage {
+    height: auto;
+    aspect-ratio: 1.36/1;
+  }
+  .gallery-arrow {
+    width: 41px;
+    height: 41px;
+    font-size: 31px;
+  }
+  .gallery-arrow.prev {
+    left: -17px;
+  }
+  .gallery-arrow.next {
+    right: -17px;
+  }
+  .gallery-expand {
+    opacity: 1;
+  }
+  .gallery-dots {
+    margin-top: 18px;
+  }
+  .location-information {
+    margin-top: 6px;
+  }
+  .composition-copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 48px;
+  }
+  .composition-copy p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 23px;
+  }
+  .composition-art {
+    position: relative;
+    left: -5%;
+    top: auto;
+    width: 110%;
+    height: auto;
+    max-width: none;
+    margin-top: 14px;
+  }
+  .composition-art img {
+    height: auto;
+  }
+  .inspiration-gallery {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    justify-items: center;
+    margin-top: 0;
+  }
+  .inspiration-item {
+    width: min(38vw, 230px);
+    height: min(38vw, 230px);
+  }
+  .dress-copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 47px;
+  }
+  .dress-copy p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .dress-art {
+    position: relative;
+    left: -6%;
+    top: auto;
+    width: 112%;
+    height: auto;
+    margin-top: 23px;
+  }
+  .ending {
+    padding-top: 45px;
+    padding-bottom: 240px;
+    min-height: 650px;
+  }
+  .ending > p,
+  .ending > p + p {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .ending > p {
+    margin-top: 47px;
+  }
+  .ending > p + p {
+    margin-top: 13px;
+  }
+  .monogram-footer {
+    top: auto;
+    bottom: 135px;
+    left: 50%;
+    width: 105px;
+    height: 105px;
+    transform: translateX(-50%);
+    border-width: 3px;
+  }
+  .footer-wave {
+    width: 100%;
+    height: 165px;
+  }
+  .lightbox {
+    gap: 3px;
+    padding: 58px 6px 35px;
+  }
+  .lightbox-control {
+    font-size: 34px;
+    width: 35px;
+    height: 42px;
+    border-radius: 6px;
+  }
+  .lightbox img {
+    max-width: calc(100vw - 92px);
+    max-height: 80vh;
+  }
+}
+@media (max-width: 370px) {
+  .hero h1 {
+    font-size: 35px;
+  }
+  .welcome,
+  .event-date,
+  .location,
+  .composition,
+  .dress-code,
+  .ending {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .welcome-copy p,
+  .composition-copy p,
+  .dress-copy p,
+  .ending > p {
+    font-size: 17px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .inspiration-item,
+  .gallery-arrow,
+  .gallery-dot {
+    transition: none;
+  }
+}
+
+/* Ajuste do cabeçalho para desktop e notebook */
+@media (min-width: 781px) {
+  .hero {
+    height: var(--hero-height, 940px);
+  }
+
+  .hero-beach {
+    top: auto;
+    bottom: 0;
+  }
+
+  .hero-curve {
+    height: 100%;
+  }
+
+  .monogram-header {
+    top: auto;
+    bottom: 145px;
+    width: 170px;
+    height: 170px;
+    left: 897px;
+  }
+
+  .hero h1 {
+    top: auto;
+    bottom: 35px;
+  }
+
+  .page > section,
+  .page > footer {
+    transform: translateY(var(--hero-offset, 0px));
+  }
+}
